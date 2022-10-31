@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-// const inquirer = require('inquirer');
+const inquirer = require('inquirer');
 const prompts = require('./prompts');
 const table = require('console.table');
 
@@ -19,3 +19,10 @@ const db = mysql.createConnection(
 
 //Query functions for database
 
+// viewDept();
+// viewRoles();
+// viewEmployees();
+// addDept();
+// addRole();
+// addEmployee();
+// updateRole();
