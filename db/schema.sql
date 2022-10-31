@@ -9,7 +9,7 @@ CREATE TABLE department (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE role (
+CREATE TABLE role ( --does it recognize that this is a name?
   id INT NOT NULL,
   title VARCHAR(30) NOT NULL,
   salary DECIMAL,
@@ -21,7 +21,8 @@ CREATE TABLE employee (
     id INT NOT NULL,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
-    role_id INT NOT NULL,
+    FOREIGN KEY (role_id)
+    REFERENCES role(id),
     -- specific employee that is the manager of the current employee
     -- is this a reference to a specific employee ID ?
     manager_id INT ON DELETE SET NULL
