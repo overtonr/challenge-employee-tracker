@@ -7,15 +7,35 @@ function mainMenu(){
         type: 'list',
         name: 'main',
         message: 'Select one of the following actions:',
-        choices: ['View all departments','View all roles','View all employees', 'Add a department', 'Add a role','Add an employee','Update an employee role']
+        choices: ['View all departments','View all roles','View all employees', 'Add a department', 'Add a role','Add an employee','Update an employee role', 'Quit']
     },
     //switch case that calls a function for each option selected
 ])
-//.then()
+.then(function(response){
+    switch(response.main){
+        case 'View all departments': viewDept();
+        break;
+        case 'View all roles': viewRoles();
+        break;
+        case 'View all employees': viewEmployees();
+        break;
+        case 'Add a department': addDept();
+        break;
+        case 'Add a role': addRole();
+        break;
+        case 'Add an employee': addEmployee();
+        break;
+        case 'Update an employee role': updateRole();
+        break;
+        case 'Quit': exit();
+        break;
+    }
+})
 };
-// viewDept();
-// viewRoles();
-// viewEmployees();
+
+viewDept();
+viewRoles();
+viewEmployees();
 
 function addDept(){
     inquirer.prompt([
@@ -75,7 +95,7 @@ function addEmployee(){
 ])};
 
 
-function updateEmployee(){
+function updateRole(){
     inquirer.prompt([
     {
         type: 'list',
@@ -92,10 +112,12 @@ function updateEmployee(){
 ])}; //function that updates the corresponding role
 // //should also update salary? what about manager
 
-
+function exit(){};
 
 
 //View all departments shows dept_id and name
 //View all roles shows role_id, title, department, and salary
 //View all employees shows emp_id, first name, last name, title, dep name, salary, manager
 //
+
+mainMenu();
