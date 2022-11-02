@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 // const inquirer = require('inquirer');
-const prompts = require('./prompts');
-const table = require('console.table');
+// const prompts = require('./prompts.js');
+// const table = require('console.table');
 
 
 //Connect to database
@@ -17,6 +17,7 @@ const db = mysql.createConnection(
     console.log(`Successfully connected to employee_db`)
 );
 
+module.exports = server;
 //Query functions for database
 
 // viewDept();
