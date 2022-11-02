@@ -13,12 +13,12 @@ function mainMenu(){
 ])
 .then(function(response){
     switch(response.main){
-        case 'View all departments': viewDept();
-        break;
-        case 'View all roles': viewRoles();
-        break;
-        case 'View all employees': viewEmployees();
-        break;
+//         case 'View all departments': viewDept();
+//         break;
+//         case 'View all roles': viewRoles();
+//         break;
+//         case 'View all employees': viewEmployees();
+//         break;
         case 'Add a department': addDept();
         break;
         case 'Add a role': addRole();
@@ -33,9 +33,9 @@ function mainMenu(){
 })
 };
 
-viewDept();
-viewRoles();
-viewEmployees();
+// viewDept();
+// viewRoles();
+// viewEmployees();
 
 function addDept(){
     inquirer.prompt([
@@ -44,7 +44,9 @@ function addDept(){
         name: 'dept_name',
         message: 'Enter the name of the department.'
     }
-])}; //function that adds name to dept in the db
+])
+
+}; //function that adds name to dept in the db
 
 function addRole(){
     inquirer.prompt([
@@ -64,7 +66,9 @@ function addRole(){
         message: 'What department is this role in?',
         choices: [] //list of existing deparments
     }
-])}; //function that adds role to db
+])
+
+}; //function that adds role to db
 //if department exists, add to that department, if not then add a new dept
 
 function addEmployee(){
@@ -112,7 +116,7 @@ function updateRole(){
 ])}; //function that updates the corresponding role
 // //should also update salary? what about manager
 
-function exit(){};
+// function exit(){};
 
 
 //View all departments shows dept_id and name
@@ -120,4 +124,6 @@ function exit(){};
 //View all employees shows emp_id, first name, last name, title, dep name, salary, manager
 //
 
-mainMenu();
+mainMenu(); // need to call after all the functions are executed
+
+// module.exports = prompts;

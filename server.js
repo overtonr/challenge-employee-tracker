@@ -1,7 +1,5 @@
 const mysql = require('mysql2');
 // const inquirer = require('inquirer');
-// const prompts = require('./prompts.js');
-// const table = require('console.table');
 
 
 //Connect to database
