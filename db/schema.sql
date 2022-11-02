@@ -4,26 +4,24 @@ CREATE DATABASE employee_db;
 USE employee_db;
 
 CREATE TABLE department (
-  id INT NOT NULL,
+  id INT NOT NULL AUTO_INCREMENT,
   dep_name VARCHAR(30),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE role ( --does it recognize that this is a name?
-  id INT NOT NULL,
+CREATE TABLE role (
+  id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(30) NOT NULL,
   salary DECIMAL,
-  FOREIGN KEY (department_id)
-  REFERENCES department(id)
+  dep_id INT NOT NULL,
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE employee (
-    id INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
-    FOREIGN KEY (role_id)
-    REFERENCES role(id),
-    -- specific employee that is the manager of the current employee
-    -- is this a reference to a specific employee ID ?
-    manager_id INT ON DELETE SET NULL
-)
+    role_id INT NOT NULL,
+    manager_id INT NOT NULL,
+    PRIMARY KEY (id)
+);

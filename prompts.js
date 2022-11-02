@@ -1,16 +1,18 @@
 //File to store the inquirer promps
 const inquirer = require("inquirer");
 
-inquirer
-    .prompt([
+function mainMenu(){
+inquirer.prompt([
     { 
         type: 'list',
         name: 'main',
         message: 'Select one of the following actions:',
         choices: ['View all departments','View all roles','View all employees', 'Add a department', 'Add a role','Add an employee','Update an employee role']
-    }
-]);
-
+    },
+    //switch case that calls a function for each option selected
+])
+//.then()
+};
 // viewDept();
 // viewRoles();
 // viewEmployees();
