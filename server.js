@@ -1,5 +1,7 @@
 const mysql = require('mysql2');
-// const inquirer = require('inquirer');
+const inquirer = require('inquirer');
+
+
 
 
 //Connect to database
@@ -7,7 +9,7 @@ const db = mysql.createConnection(
     {
         // host : 'localhost',
         host : '127.0.0.1',
-        port : 3306,
+        // port : 3306,
         user : 'root',
         password : 'password',
         database : 'employee_db'
@@ -15,7 +17,7 @@ const db = mysql.createConnection(
     console.log(`Successfully connected to employee_db`)
 );
 
-module.exports = server;
+// module.exports = server;
 //Query functions for database
 
 // viewDept();
